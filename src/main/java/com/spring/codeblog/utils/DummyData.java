@@ -18,7 +18,7 @@ public class DummyData {
     CodeblogRepository codeblogRepository;
 
     //criar um methodo construtor para executar na inicializacao da app
-    @PostConstruct
+    //@PostConstruct deixar comentada para nao ficar gerando novos registros em cada inicializacao
     public void savePosts(){
 
         List<Post> postList = new ArrayList<>();
