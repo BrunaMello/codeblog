@@ -9,6 +9,16 @@
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
                   integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
+            <!-- Google Icons-->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+            <!-- Summernote -->
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+
         </head>
         <body>
 
@@ -29,6 +39,7 @@
                     </nav>
 
                     <div>
+                        <th:block th:include="mensagemValidacao"></th:block>
                         <form method="post">
                             <div class="form-group">
                                 <input type="text" class="form-control" name="titulo" placeholder="Título *">
@@ -38,7 +49,7 @@
                                 <input type="text" class="form-control" name="autor" placeholder="Autor *">
                             </div>
 
-                            <textarea type="text" class="form-control" name="texto" placeholder="Texto *"></textarea>
+                            <textarea id="summernote" type="text" class="form-control" name="texto" placeholder="Texto *"></textarea>
 
                             <small class="form-text text-muted">(*) Campos Obrigatórios</small>
 
@@ -50,6 +61,14 @@
                 </div>
 
             </section>
+
+            <script>
+                $('#summernote').summernote({
+                    placeholder: 'Texto *',
+                    tabsize: 2,
+                    height: 300
+                });
+            </script>
 
         </body>
 
